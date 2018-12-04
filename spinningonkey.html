@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <style>
+      #box{
+        width:200px;
+        height:200px;
+        background-color:tomato;
+    }
+    </style>
+    
+  </head>
+  <body>
+    <div id = "box"></div>
+    <h1 id = "test"></h1>
+    <script>
+      var degrees = 0;
+      document.body.addEventListener('keypress',function(userChoice){
+        var key = userChoice.keyCode;
+        if (key == 100){ //then this is the left key
+          degrees++;
+          document.getElementById('test').innerHTML = degrees;
+          document.getElementById('box').style.transform = "rotate(" + degrees + "deg)";
+        }
+        else if(key == 97){
+          degrees--;
+          document.getElementById('test').innerHTML = degrees;
+          document.getElementById('box').style.transform = "rotate(" + degrees + "deg)";
+        }
+      })
+    </script>
+  </body>
+</html>
